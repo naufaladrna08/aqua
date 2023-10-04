@@ -1,0 +1,142 @@
+syntax = "proto3";
+package aqua;
+
+option go_package = "/aqua";
+
+import "google/api/annotations.proto";
+// import "protoc-gen-swagger/options/annotations.proto";
+
+service AquaService {
+  rpc Hello(Empty) returns (Message) {
+    option (google.api.http) = { 
+      get: "/hello"
+    };
+  }
+
+  rpc CreateUser(User) returns (UserResponse) {
+    option (google.api.http) = {
+      post: "/user"
+      body: "*"
+    };
+  }
+
+  rpc CreateArticle(Article) returns (ArticleResponse) {
+    option (google.api.http) = {
+      post: "/article"
+      body: "*"
+    };
+  }
+
+  rpc GetArticle(Article) returns (ArticleResponse) {
+    option (google.api.http) = {
+      get: "/article/{id}"
+    };
+  }
+
+  rpc GetArticles(Empty) returns (ArticlesResponse) {
+    option (google.api.http) = {
+      get: "/articles"
+    };
+  }
+
+
+  rpc GetUser(User) returns (UserResponse) {
+    option (google.api.http) = {
+      get: "/user/{id}"
+    };
+  }
+
+  rpc GetUsers(Empty) returns (UsersResponse) {
+    option (google.api.http) = {
+      get: "/users"
+    };
+  }
+
+  rpc UpdateUser(User) returns (UserResponse) {
+    option (google.api.http) = {
+      put: "/user/{id}"
+      body: "*"
+    };
+  }
+
+  rpc UpdateArticle(Article) returns (ArticleResponse) {
+    option (google.api.http) = {
+      put: "/article/{id}"
+      body: "*"
+    };
+  }
+
+  rpc DeleteArticle(Article) returns (ArticleResponse) {
+    option (google.api.http) = {
+      delete: "/article/{id}"
+    };
+  }
+
+  rpc DeleteUser(User) returns (UserResponse) {
+    option (google.api.http) = {
+      delete: "/user/{id}"
+    };
+  }
+
+  rpc Login(AuthCredentials) returns (AuthResponse) {
+    option (google.api.http) = {
+      post: "/login"
+      body: "*"
+    };
+  }
+}
+
+message Article {
+  int64 id = 1;
+  string title = 2;
+  string description = 3;
+  User user = 4;
+} 
+
+message User {
+  int64 id = 1;
+  string username = 2;
+  string password = 3;
+}
+
+message UserResponse {
+  string status = 1;
+  string message = 2;
+  User user = 3;
+}
+
+message UsersResponse {
+  string status = 1;
+  string message = 2;
+  repeated User user = 3;
+}
+
+message ArticleResponse {
+  string status = 1;
+  string message = 2;
+  Article article = 3;
+}
+
+message ArticlesResponse {
+  string status = 1;
+  string message = 2;
+  repeated Article articles = 3;
+}
+
+message Message {
+  string message = 1;
+}
+
+message AuthCredentials {
+  string username = 1;
+  string password = 2;
+}
+
+message AuthResponse {
+  string status = 1;
+  string message = 2;
+  string token = 3;
+  User user = 4;
+}
+
+message Empty {}
