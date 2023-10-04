@@ -8,6 +8,9 @@ DB_SCHEMA = aqua
 DB_ARGS = -db-host=$(DB_HOST) -db-port=$(DB_PORT) -db-user=$(DB_USER) -db-password=$(DB_PASSWORD) -db-schema=$(DB_SCHEMA)
 
 init:
+	@echo "Creating directories"
+	mkdir -pv vendor api/proto api/swagger cmd/aqua pkg/api
+
 	@echo "Installing dependencies"
 	go mod tidy
 
