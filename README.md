@@ -1,5 +1,18 @@
 Buat beberapa directory pada project root directory:
 
+Untuk pakai:
+
+```bash
+# Create directory
+make init
+
+# Generate stubs
+make proto
+
+# Run server
+make run
+```
+
 ```bash
 mkdir -p api/proto cmd pkg/{api,cmd,protocol,service} vendor test
 ```
