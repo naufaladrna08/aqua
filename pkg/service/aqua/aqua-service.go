@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	aqua "github.com/peurisa/aqua/pkg/api/aqua"
+	aqua "github.com/naufaladrna08/aqua/pkg/api/aqua"
 	"gorm.io/gorm"
 
 	"golang.org/x/crypto/bcrypt"

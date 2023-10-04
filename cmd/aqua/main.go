@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	aqua "github.com/peurisa/aqua/pkg/cmd/aqua"
+	aqua "github.com/naufaladrna08/aqua/pkg/cmd/aqua"
 )
 
 func main() {
