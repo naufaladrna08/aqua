@@ -3,4 +3,4 @@
 api/swagger
 cmd/aqua/aqua
 pkg/api
-vendor
+# vendor
