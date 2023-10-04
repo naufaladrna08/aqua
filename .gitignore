@@ -1,0 +1,6 @@
+.vscode
+api/proto
+api/swagger
+cmd/aqua/aqua
+pkg/api
+vendor
