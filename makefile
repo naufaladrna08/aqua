@@ -9,10 +9,11 @@ DB_ARGS = -db-host=$(DB_HOST) -db-port=$(DB_PORT) -db-user=$(DB_USER) -db-passwo
 
 init:
 	@echo "Creating directories"
-	mkdir -pv vendor api/proto api/swagger cmd/aqua pkg/api
+	mkdir -pv vendor api/proto api/swagger cmd/aqua pkg/api/aqua
 
 	@echo "Installing dependencies"
-	go mod tidy
+	go mod download
+	go mod vendor
 
 build:
 	@echo "Building the application"
