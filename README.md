@@ -17,6 +17,6 @@ Keterangan:
 Init module go
 
 ```bash
-go mod init github.com/naufaladrna08/aqua 
+go mod init github.com/peurisa/aqua 
 ```
 

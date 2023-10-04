@@ -11,13 +11,13 @@ import (
 	"strconv"
 
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
-	"github.com/naufaladrna08/aqua/pkg/api/aqua"
+	"github.com/peurisa/aqua/pkg/api/aqua"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 
-	service "github.com/naufaladrna08/aqua/pkg/service/aqua"
+	service "github.com/peurisa/aqua/pkg/service/aqua"
 )
 
 var (

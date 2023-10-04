@@ -1,4 +1,4 @@
-module github.com/naufaladrna08/aqua
+module github.com/peurisa/aqua
 
 go 1.21.1
 
